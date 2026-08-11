@@ -1,0 +1,35 @@
+class MyHashSet:
+
+    '''
+    Each time a HashSet is initialised, we make a List to keep track of K-V Pairs
+    '''
+    def __init__(self):
+        self.hashSet = []
+        
+
+    def add(self, key: int) -> None:
+        # Problematic since addition should be O(1)
+        if key in self.hashSet:
+            # Key already exists so no point adding it in here.
+            return None
+        self.hashSet.append(key)
+
+    def remove(self, key: int) -> None:
+        # Should be O(1)
+        if not key in self.hashSet:
+            return None #Nothing to remove
+        self.hashSet.remove(key)
+
+    def contains(self, key: int) -> bool:
+        # Should be O(1)
+        if key in self.hashSet:
+            return True
+        return False
+        
+
+
+# Your MyHashSet object will be instantiated and called as such:
+# obj = MyHashSet()
+# obj.add(key)
+# obj.remove(key)
+# param_3 = obj.contains(key)
